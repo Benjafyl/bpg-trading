@@ -92,17 +92,17 @@ function Header() {
 
 function BrandLogo() {
   return (
-    <a href="#inicio" className="flex shrink-0 items-center gap-3">
-      <span className="relative h-11 w-16 overflow-hidden rounded-sm border border-[#36D9FF]/10 bg-black">
+    <a href="#inicio" className="flex shrink-0 items-center gap-4">
+      <span className="relative h-14 w-24 overflow-hidden rounded-sm border border-[#36D9FF]/10 bg-black sm:h-16 sm:w-28">
         <Image
           src={percentilLogo}
           alt="Percentil1"
           fill
-          sizes="64px"
+          sizes="(min-width: 640px) 112px, 96px"
           className="object-cover object-center opacity-90"
         />
       </span>
-      <span className="hidden text-sm font-extrabold uppercase tracking-[0.32em] text-[#F5F7FA] sm:block">
+      <span className="hidden text-base font-extrabold uppercase tracking-[0.28em] text-[#F5F7FA] sm:block">
         Percentil<span className="text-[#36D9FF]">1</span>
       </span>
     </a>

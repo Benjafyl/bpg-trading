@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Inter } from "next/font/google";
+import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,10 +7,10 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const anton = Anton({
-  variable: "--font-anton",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${inter.variable} ${anton.variable} h-full scroll-smooth antialiased`}
+      className={`${inter.variable} ${sora.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full">{children}</body>
     </html>

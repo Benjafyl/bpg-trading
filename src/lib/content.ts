@@ -1,6 +1,5 @@
 import type { LucideIcon } from "lucide-react";
 import {
-  BarChart3,
   Brain,
   CandlestickChart,
   CheckCircle2,
@@ -11,7 +10,6 @@ import {
   ShieldCheck,
   Target,
   Trophy,
-  Users,
 } from "lucide-react";
 
 export const instagramUrl = "https://www.instagram.com/bpgtrading/?hl=es-la";
@@ -152,47 +150,5 @@ export const certificates = [
     label: "Funded trader",
     image: "/assets/certificate-neomaaa-funded.jpeg",
     format: "wide",
-  },
-  {
-    title: "NEOMAAA Phase Two Passed",
-    label: "Phase two passed",
-    image: "/assets/certificate-neomaaa-phase-two.jpeg",
-    format: "wide",
-  },
-  {
-    title: "Apex Trader Funding Payment",
-    label: "Certificate of payment",
-    image: "/assets/certificate-apex-payment.jpeg",
-    format: "wide",
-  },
-  {
-    title: "Uprofit Certificado de Retiro",
-    label: "Retiro certificado",
-    image: "/assets/certificate-uprofit-withdrawal.jpeg",
-    format: "wide",
-  },
-  {
-    title: "Santander Open Academy",
-    label: "Curso terminado",
-    image: "/assets/certificate-santander-academy-upright.jpeg",
-    format: "wide",
-  },
-];
-
-export const communityPlaceholders = [
-  {
-    title: "Alumno en proceso",
-    text: "Espacio reservado para avances reales de alumnos, con autorizacion previa.",
-    icon: Users,
-  },
-  {
-    title: "Proximamente testimonios",
-    text: "La seccion se completara cuando existan testimonios verificables.",
-    icon: BarChart3,
-  },
-  {
-    title: "Resultados autorizados",
-    text: "Los resultados y avances se incorporaran sin promesas ni datos inventados.",
-    icon: CheckCircle2,
   },
 ];

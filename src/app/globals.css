@@ -2,12 +2,13 @@
 
 :root {
   --background: #050505;
-  --foreground: #f2efe3;
-  --cream: #f2efe3;
-  --soft-black: #111111;
-  --muted: #b8b8b8;
-  --blue: #009fe3;
-  --gold: #f5b642;
+  --foreground: #f5f7fa;
+  --soft-black: #0d0d0f;
+  --carbon: #1a1c20;
+  --muted: #a0a6b0;
+  --muted-dark: #5c6068;
+  --blue: #36d9ff;
+  --blue-hover: #78ecff;
 }
 
 @theme inline {
@@ -24,13 +25,14 @@ body {
 }
 
 ::selection {
-  background: var(--gold);
+  background: var(--blue);
   color: #050505;
 }
 
 .font-display {
-  font-family: var(--font-anton), Impact, sans-serif;
+  font-family: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
   letter-spacing: 0;
+  font-weight: 800;
 }
 
 .container-shell {
@@ -43,7 +45,7 @@ body {
 }
 
 .eyebrow {
-  color: var(--gold);
+  color: var(--blue);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -59,11 +61,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
-  border-radius: 2px;
-  padding: 0.95rem 1.45rem;
+  border-radius: 999px;
+  padding: 1rem 1.7rem;
   font-size: 0.8rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   line-height: 1.25;
   text-align: center;
   text-transform: uppercase;
@@ -71,7 +73,8 @@ body {
     transform 180ms ease,
     border-color 180ms ease,
     background 180ms ease,
-    color 180ms ease;
+    color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .btn-primary svg,
@@ -91,51 +94,56 @@ body {
 }
 
 .btn-primary {
-  border: 1px solid var(--cream);
-  background: var(--cream);
+  border: 1px solid rgba(54, 217, 255, 0.75);
+  background: linear-gradient(135deg, var(--blue), var(--blue-hover));
   color: #050505;
+  box-shadow: 0 0 0 1px rgba(54, 217, 255, 0.08), 0 18px 48px rgba(54, 217, 255, 0.16);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(120, 236, 255, 0.18), 0 22px 58px rgba(54, 217, 255, 0.28);
 }
 
 .btn-secondary {
-  border: 1px solid rgba(242, 239, 227, 0.24);
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--cream);
+  border: 1px solid rgba(245, 247, 250, 0.18);
+  background: rgba(245, 247, 250, 0.035);
+  color: var(--foreground);
 }
 
 .btn-secondary:hover,
 .btn-ghost:hover {
   transform: translateY(-2px);
-  border-color: rgba(242, 239, 227, 0.62);
-  background: rgba(242, 239, 227, 0.08);
+  border-color: rgba(54, 217, 255, 0.62);
+  background: rgba(54, 217, 255, 0.08);
+  box-shadow: 0 18px 48px rgba(54, 217, 255, 0.08);
 }
 
 .btn-ghost {
-  border: 1px solid rgba(0, 159, 227, 0.45);
-  color: #ffffff;
+  border: 1px solid rgba(54, 217, 255, 0.45);
+  color: var(--foreground);
 }
 
 .premium-card {
-  border: 1px solid rgba(242, 239, 227, 0.12);
+  border: 1px solid rgba(245, 247, 250, 0.1);
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
-    #0b0b0b;
-  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.28);
+    linear-gradient(145deg, rgba(245, 247, 250, 0.05), rgba(245, 247, 250, 0.014)),
+    var(--soft-black);
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.32);
 }
 
-.cream-panel {
-  background: var(--cream);
-  color: #050505;
+.signal-panel {
+  border-block: 1px solid rgba(54, 217, 255, 0.18);
+  background:
+    radial-gradient(circle at 82% 22%, rgba(54, 217, 255, 0.18), transparent 30%),
+    linear-gradient(135deg, #050505, #0d0d0f 64%, #081114);
+  color: var(--foreground);
 }
 
 .field-label {
   display: grid;
   gap: 0.7rem;
-  color: rgba(242, 239, 227, 0.74);
+  color: rgba(245, 247, 250, 0.72);
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -144,8 +152,8 @@ body {
 
 .field-control {
   width: 100%;
-  border: 1px solid rgba(242, 239, 227, 0.14);
-  border-radius: 2px;
+  border: 1px solid rgba(245, 247, 250, 0.12);
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.045);
   color: #ffffff;
   outline: none;
@@ -162,12 +170,12 @@ body {
 
 .field-control:focus {
   border-color: var(--blue);
-  background: rgba(0, 159, 227, 0.08);
-  box-shadow: 0 0 0 3px rgba(0, 159, 227, 0.12);
+  background: rgba(54, 217, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(54, 217, 255, 0.12);
 }
 
 .field-control::placeholder {
-  color: rgba(184, 184, 184, 0.62);
+  color: rgba(160, 166, 176, 0.68);
 }
 
 .field-control option {

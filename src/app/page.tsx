@@ -118,8 +118,8 @@ function Hero() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_82%_16%,rgba(54,217,255,0.18),transparent_31%),radial-gradient(circle_at_18%_18%,rgba(92,96,104,0.16),transparent_29%)]" />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(245,247,250,0.022)_1px,transparent_1px),linear-gradient(90deg,rgba(245,247,250,0.022)_1px,transparent_1px)] bg-[size:54px_54px]" />
 
-      <div className="container-shell grid min-h-[calc(100vh-9rem)] items-center gap-14 pb-24 lg:grid-cols-[1fr_0.82fr]">
-        <div className="reveal max-w-4xl">
+      <div className="container-shell flex min-h-[calc(100vh-9rem)] items-center pb-24">
+        <div className="reveal max-w-5xl">
           <p className="eyebrow mb-6">Mentoria de trading / Benjamin Page</p>
           <h1 className="font-display text-[clamp(3.25rem,10.4vw,7.9rem)] leading-[1.02] text-[#F5F7FA] md:leading-[0.96]">
             MENTORIA
@@ -159,47 +159,8 @@ function Hero() {
             </a>
           </div>
         </div>
-        <HeroBrandMark />
       </div>
     </section>
-  );
-}
-
-function HeroBrandMark() {
-  return (
-    <div className="reveal relative hidden min-h-[420px] lg:block">
-      <div className="absolute inset-0 rounded-full bg-[#36D9FF]/10 blur-3xl" />
-      <div className="premium-card relative flex min-h-[420px] flex-col justify-between overflow-hidden p-9">
-        <div className="absolute inset-0 opacity-65">
-          <BellCurve className="absolute left-6 right-6 top-16 h-48 w-[calc(100%-3rem)] text-[#5C6068]" />
-        </div>
-        <div className="relative z-10 flex items-start justify-between gap-6">
-          <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.26em] text-[#36D9FF]">
-              Percentil signal
-            </p>
-            <p className="mt-3 text-sm leading-7 text-[#A0A6B0]">
-              Estructura. Riesgo. Psicologia.
-            </p>
-          </div>
-          <span className="font-display text-8xl leading-none text-[#36D9FF] drop-shadow-[0_0_34px_rgba(54,217,255,0.62)]">
-            1
-          </span>
-        </div>
-        <div className="relative z-10 border-t border-[#36D9FF]/18 pt-7">
-          <div className="grid gap-3">
-            {["Estructura", "Riesgo", "Ejecucion"].map((item) => (
-              <p
-                key={item}
-                className="rounded-full border border-white/10 bg-white/[0.025] px-4 py-3 text-[0.68rem] font-extrabold uppercase tracking-[0.12em] text-[#F5F7FA]"
-              >
-                {item}
-              </p>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }
 

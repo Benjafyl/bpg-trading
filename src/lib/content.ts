@@ -15,8 +15,8 @@ import {
 export const instagramUrl = "https://www.instagram.com/bpgtrading/?hl=es-la";
 
 export const applicationDeadline = {
-  iso: "2026-06-30T23:59:59-04:00",
-  label: "30 de junio, 23:59 hrs",
+  iso: "2026-06-21T23:59:59-04:00",
+  label: "21 de junio, 23:59 hrs",
 };
 
 export const heroStats = [

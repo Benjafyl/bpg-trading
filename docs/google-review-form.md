@@ -5,7 +5,7 @@ URL editable en código:
 `src/lib/contact.ts`
 
 ```ts
-export const GOOGLE_REVIEW_FORM_URL = "https://forms.gle/REEMPLAZAR_AQUI";
+export const GOOGLE_REVIEW_FORM_URL = "https://forms.gle/bFtPFNKkpiYpZXLG6";
 ```
 
 Preguntas sugeridas para armar el formulario:

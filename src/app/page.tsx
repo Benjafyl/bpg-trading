@@ -572,7 +572,7 @@ function ContactSection() {
               .
             </>
           }
-          text="Completa tus datos y se generará un mensaje prellenado para WhatsApp. Si el número aún no está configurado, el formulario usará correo como alternativa."
+          text="Completa tus datos, experiencia en trading y disponibilidad de inversión. Al enviar, se generará un mensaje prellenado para WhatsApp."
         />
         <div className="premium-card reveal p-5 md:p-8 lg:p-9">
           <ContactForm />

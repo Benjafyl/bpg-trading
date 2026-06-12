@@ -58,7 +58,10 @@ export function ApplicationCountdown({
   );
 
   return (
-    <div className="premium-card mt-8 grid max-w-4xl gap-5 p-4 md:grid-cols-[1fr_auto] md:items-center md:p-5">
+    <div
+      id="segunda-generacion"
+      className="premium-card mt-8 grid max-w-4xl scroll-mt-28 gap-5 p-4 md:grid-cols-[1fr_auto] md:items-center md:p-5"
+    >
       <div>
         <p className="eyebrow mb-2">Segunda generación</p>
         <h2 className="font-display text-[clamp(1.25rem,2.6vw,2rem)] leading-tight text-[#F5F7FA]">

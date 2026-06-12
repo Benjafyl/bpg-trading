@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import {
   ArrowDown,
   ArrowUpRight,
+  ChevronDown,
   Menu,
 } from "lucide-react";
 import { ApplicationCountdown } from "@/components/ApplicationCountdown";
@@ -22,6 +23,27 @@ const whatsappIntro =
   "Hola, quiero recibir información sobre la Mentoría Percentil1.";
 const profileImage = "/assets/benjamin-page-profile.png"; // Cambia esta ruta si reemplazas la foto oficial.
 const percentilLogo = "/assets/percentil1-logo.jpeg"; // Reemplaza este asset si cambia el logo oficial.
+
+const homeNavItems = [
+  ["Inicio", "#inicio"],
+  ["Segunda generación", "#segunda-generacion"],
+  ["Postulación", "#contacto"],
+];
+
+const mentorshipNavItems = [
+  ["Para quién es", "#mentoria"],
+  ["Qué aprenderás", "#que-aprenderas"],
+  ["Programa", "#programa"],
+  ["Sobre Benjamín", "#sobre-benjamin"],
+  ["Certificaciones", "#certificaciones"],
+  ["Reseñas", "#resenas"],
+];
+
+const mobileNavItems = [
+  ...homeNavItems,
+  ...mentorshipNavItems,
+  ["Contacto", "#contacto"],
+];
 
 export default function Home() {
   return (
@@ -47,12 +69,8 @@ function Header() {
       <div className="container-shell flex min-h-[72px] items-center justify-between gap-4 py-3">
         <BrandLogo />
         <nav className="hidden items-center gap-7 text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-[#A0A6B0] lg:flex">
-          <a className="px-1 py-2 transition hover:text-[#78ECFF]" href="#inicio">
-            Inicio
-          </a>
-          <a className="px-1 py-2 transition hover:text-[#78ECFF]" href="#mentoria">
-            Mentoría
-          </a>
+          <DesktopNavDropdown label="Inicio" href="#inicio" items={homeNavItems} />
+          <DesktopNavDropdown label="Mentoría" href="#mentoria" items={mentorshipNavItems} />
           <a className="px-1 py-2 transition hover:text-[#78ECFF]" href="#certificaciones">
             Certificaciones
           </a>
@@ -67,15 +85,10 @@ function Header() {
           <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full border border-[#36D9FF]/25 bg-[#36D9FF]/[0.04] text-white transition hover:bg-[#36D9FF]/10 [&::-webkit-details-marker]:hidden">
             <Menu className="h-5 w-5" />
           </summary>
-          <div className="absolute right-0 mt-3 w-64 border border-[#36D9FF]/18 bg-[#0D0D0F] p-3 shadow-2xl shadow-black/60">
-            {[
-              ["Inicio", "#inicio"],
-              ["Mentoría", "#mentoria"],
-              ["Certificaciones", "#certificaciones"],
-              ["Contacto", "#contacto"],
-            ].map(([label, href]) => (
+          <div className="absolute right-0 mt-3 max-h-[calc(100vh-6rem)] w-64 overflow-y-auto border border-[#36D9FF]/18 bg-[#0D0D0F] p-3 shadow-2xl shadow-black/60">
+            {mobileNavItems.map(([label, href]) => (
               <a
-                key={href}
+                key={`${label}-${href}`}
                 href={href}
                 className="block border-b border-white/8 px-3 py-4 text-sm font-black uppercase tracking-[0.12em] text-[#A0A6B0] last:border-b-0 hover:text-[#78ECFF]"
               >
@@ -89,6 +102,41 @@ function Header() {
         </details>
       </div>
     </header>
+  );
+}
+
+function DesktopNavDropdown({
+  label,
+  href,
+  items,
+}: {
+  label: string;
+  href: string;
+  items: string[][];
+}) {
+  return (
+    <div className="group relative">
+      <a
+        href={href}
+        className="inline-flex items-center gap-1.5 px-1 py-2 transition hover:text-[#78ECFF] group-hover:text-[#78ECFF]"
+      >
+        {label}
+        <ChevronDown className="h-3.5 w-3.5 transition group-hover:rotate-180" />
+      </a>
+      <div className="pointer-events-none absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-4 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+        <div className="border border-[#36D9FF]/18 bg-[#0D0D0F]/96 p-2 shadow-2xl shadow-black/60 backdrop-blur-xl">
+          {items.map(([itemLabel, itemHref]) => (
+            <a
+              key={`${itemLabel}-${itemHref}`}
+              href={itemHref}
+              className="block border-b border-white/8 px-4 py-3 text-[0.72rem] font-extrabold uppercase tracking-[0.12em] text-[#A0A6B0] transition last:border-b-0 hover:bg-[#36D9FF]/8 hover:text-[#78ECFF]"
+            >
+              {itemLabel}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -115,7 +163,7 @@ function Hero() {
   return (
     <section
       id="inicio"
-      className="relative isolate pt-28 md:pt-36"
+      className="relative isolate scroll-mt-28 pt-28 md:pt-36"
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_82%_16%,rgba(54,217,255,0.18),transparent_31%),radial-gradient(circle_at_18%_18%,rgba(92,96,104,0.16),transparent_29%)]" />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(245,247,250,0.022)_1px,transparent_1px),linear-gradient(90deg,rgba(245,247,250,0.022)_1px,transparent_1px)] bg-[size:54px_54px]" />
@@ -197,7 +245,7 @@ function BellCurve({ className = "" }: { className?: string }) {
 
 function AudienceSection() {
   return (
-    <section id="mentoria" className="section-pad border-y border-[#36D9FF]/10">
+    <section id="mentoria" className="section-pad scroll-mt-28 border-y border-[#36D9FF]/10">
       <div className="container-shell">
         <SectionIntro
           eyebrow="Para quién es"
@@ -220,7 +268,7 @@ function AudienceSection() {
 
 function LearningSection() {
   return (
-    <section className="section-pad">
+    <section id="que-aprenderas" className="section-pad scroll-mt-28">
       <div className="container-shell">
         <SectionIntro
           eyebrow="Qué aprenderás"
@@ -253,7 +301,7 @@ function LearningSection() {
 
 function ProgramSection() {
   return (
-    <section id="programa" className="section-pad signal-panel relative overflow-hidden">
+    <section id="programa" className="section-pad signal-panel relative scroll-mt-28 overflow-hidden">
       <BellCurve className="pointer-events-none absolute -right-10 top-12 h-44 w-[420px] text-[#1A1C20] opacity-55" />
       <div className="container-shell">
         <SectionIntro
@@ -286,7 +334,7 @@ function ProgramSection() {
 
 function AboutSection() {
   return (
-    <section id="sobre-benjamin" className="section-pad">
+    <section id="sobre-benjamin" className="section-pad scroll-mt-28">
       <div className="container-shell grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div className="reveal">
           {profileImage ? (
@@ -359,7 +407,7 @@ function CertificatesSection() {
   return (
     <section
       id="certificaciones"
-      className="section-pad relative overflow-hidden border-y border-[#36D9FF]/10 bg-[radial-gradient(circle_at_78%_18%,rgba(54,217,255,0.13),transparent_30%),radial-gradient(circle_at_20%_70%,rgba(92,96,104,0.13),transparent_24%)]"
+      className="section-pad relative scroll-mt-28 overflow-hidden border-y border-[#36D9FF]/10 bg-[radial-gradient(circle_at_78%_18%,rgba(54,217,255,0.13),transparent_30%),radial-gradient(circle_at_20%_70%,rgba(92,96,104,0.13),transparent_24%)]"
     >
       <BellCurve className="pointer-events-none absolute left-1/2 top-10 h-36 w-[420px] -translate-x-1/2 text-[#1A1C20] opacity-55" />
       <div className="container-shell">
@@ -448,7 +496,7 @@ function CertificateCard({
 
 function CommunitySection() {
   return (
-    <section className="section-pad">
+    <section id="resenas" className="section-pad scroll-mt-28">
       <div className="container-shell">
         <div className="premium-card reveal grid gap-8 p-7 md:grid-cols-[0.9fr_1.1fr] md:p-10">
           <div>
@@ -511,7 +559,7 @@ function FinalCta() {
 
 function ContactSection() {
   return (
-    <section id="contacto" className="section-pad">
+    <section id="contacto" className="section-pad scroll-mt-28">
       <div className="container-shell grid gap-12 lg:grid-cols-[0.74fr_1.26fr] lg:gap-16">
         <SectionIntro
           eyebrow="Contacto"

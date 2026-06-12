@@ -35,7 +35,7 @@ export function ContactForm() {
     event.preventDefault();
 
     const message = [
-      "Hola, quiero postular a la Mentoria Percentil1.",
+      "Hola, quiero postular a la Mentoría Percentil1.",
       "",
       `Nombre: ${form.name}`,
       `Correo: ${form.email}`,
@@ -50,7 +50,7 @@ export function ContactForm() {
     }
 
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      "Postulacion Mentoria Percentil1",
+      "Postulación Mentoría Percentil1",
     )}&body=${encodeURIComponent(message)}`;
   }
 
@@ -98,7 +98,7 @@ export function ContactForm() {
             className="field-control"
           >
             <option>Desde cero</option>
-            <option>Basico</option>
+            <option>Básico</option>
             <option>Intermedio</option>
           </select>
         </label>
@@ -109,13 +109,13 @@ export function ContactForm() {
           value={form.message}
           onChange={(event) => updateField("message", event.target.value)}
           className="field-control min-h-32 resize-y"
-          placeholder="Cuentanos que buscas aprender o que experiencia tienes."
+          placeholder="Cuéntanos qué buscas aprender o qué experiencia tienes."
         />
       </label>
       <div className="flex flex-col gap-4 pt-2 sm:flex-row">
         <button type="submit" className="btn-primary group sm:min-w-60">
           <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          Enviar postulacion
+          Enviar postulación
         </button>
         <a href={`mailto:${CONTACT_EMAIL}`} className="btn-secondary sm:min-w-44">
           <Mail className="h-4 w-4" />

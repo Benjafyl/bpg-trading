@@ -14,13 +14,13 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Mentoria Percentil1 | Benjamin Page Trading",
+  title: "Mentoría Percentil1 | Benjamín Page Trading",
   description:
-    "Mentoria de trading para aprender desde lo mas basico hasta preparar una operativa enfocada en cuentas de fondeo, gestion de riesgo, psicologia y accion del precio.",
+    "Mentoría de trading para aprender desde lo más básico hasta preparar una operativa enfocada en cuentas de fondeo, gestión de riesgo, psicología y acción del precio.",
   openGraph: {
-    title: "Mentoria Percentil1 | Benjamin Page Trading",
+    title: "Mentoría Percentil1 | Benjamín Page Trading",
     description:
-      "Programa guiado por Benjamin Page para aprender trading con estructura, riesgo, psicologia y accion del precio.",
+      "Programa guiado por Benjamín Page para aprender trading con estructura, riesgo, psicología y acción del precio.",
     type: "website",
     locale: "es_CL",
   },

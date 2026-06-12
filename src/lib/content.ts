@@ -14,11 +14,16 @@ import {
 
 export const instagramUrl = "https://www.instagram.com/bpgtrading/?hl=es-la";
 
+export const applicationDeadline = {
+  iso: "2026-06-30T23:59:59-04:00",
+  label: "30 de junio, 23:59 hrs",
+};
+
 export const heroStats = [
   "4 semanas",
   "8 clases",
   "2 clases por semana",
-  "Desde lo mas basico",
+  "Desde lo más básico",
   "Enfoque en cuentas de fondeo",
 ];
 
@@ -34,7 +39,7 @@ export const audienceCards: Array<{
   },
   {
     title: "Base sin estructura",
-    text: "Para traders que ya conocen conceptos, pero necesitan ordenar criterio, riesgo y ejecucion.",
+    text: "Para traders que ya conocen conceptos, pero necesitan ordenar criterio, riesgo y ejecución.",
     icon: ClipboardList,
   },
   {
@@ -43,8 +48,8 @@ export const audienceCards: Array<{
     icon: Trophy,
   },
   {
-    title: "Riesgo y psicologia",
-    text: "Para mejorar disciplina, gestion de perdida y toma de decisiones bajo presion.",
+    title: "Riesgo y psicología",
+    text: "Para mejorar disciplina, gestión de pérdida y toma de decisiones bajo presión.",
     icon: Brain,
   },
 ];
@@ -55,22 +60,22 @@ export const learningTopics: Array<{
   icon: LucideIcon;
 }> = [
   {
-    title: "Introduccion al trading",
+    title: "Introducción al trading",
     text: "Conceptos base, lenguaje del mercado y funcionamiento general.",
     icon: LineChart,
   },
   {
     title: "Brokers y plataformas",
-    text: "Entorno operativo, herramientas y preparacion tecnica.",
+    text: "Entorno operativo, herramientas y preparación técnica.",
     icon: Gauge,
   },
   {
-    title: "Gestion de riesgo",
-    text: "Reglas de exposicion, perdida maxima y control del capital.",
+    title: "Gestión de riesgo",
+    text: "Reglas de exposición, pérdida máxima y control del capital.",
     icon: ShieldCheck,
   },
   {
-    title: "Psicologia",
+    title: "Psicología",
     text: "Disciplina, paciencia, sesgos y control emocional.",
     icon: Brain,
   },
@@ -80,13 +85,13 @@ export const learningTopics: Array<{
     icon: Target,
   },
   {
-    title: "Accion del precio",
-    text: "Lectura del grafico, estructura y zonas de decision.",
+    title: "Acción del precio",
+    text: "Lectura del gráfico, estructura y zonas de decisión.",
     icon: CandlestickChart,
   },
   {
-    title: "Preparacion para fondeo",
-    text: "Practica guiada y enfoque para reglas de evaluacion.",
+    title: "Preparación para fondeo",
+    text: "Práctica guiada y enfoque para reglas de evaluación.",
     icon: CheckCircle2,
   },
 ];
@@ -95,29 +100,29 @@ export const programWeeks = [
   {
     week: "Semana 01",
     title: "Fundamentos",
-    text: "Trading desde la base, conceptos principales, plataformas y preparacion del entorno de trabajo.",
+    text: "Trading desde la base, conceptos principales, plataformas y preparación del entorno de trabajo.",
   },
   {
     week: "Semana 02",
-    title: "Lectura tecnica",
-    text: "Accion del precio, estructura de mercado y lectura practica del grafico.",
+    title: "Lectura técnica",
+    text: "Acción del precio, estructura de mercado y lectura práctica del gráfico.",
   },
   {
     week: "Semana 03",
     title: "Riesgo y plan",
-    text: "Gestion de riesgo, psicologia y construccion de un plan operativo propio.",
+    text: "Gestión de riesgo, psicología y construcción de un plan operativo propio.",
   },
   {
     week: "Semana 04",
-    title: "Practica y fondeo",
-    text: "Estrategia, revision guiada y preparacion responsable para cuentas de fondeo.",
+    title: "Práctica y fondeo",
+    text: "Estrategia, revisión guiada y preparación responsable para cuentas de fondeo.",
   },
 ];
 
 export const certificates = [
   {
     title: "Uprofit Program Completado",
-    label: "Evaluacion completada",
+    label: "Evaluación completada",
     image: "/assets/certificate-uprofit-program.jpeg",
     format: "portrait",
   },

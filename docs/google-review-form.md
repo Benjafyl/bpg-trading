@@ -1,6 +1,6 @@
-# Google Form para resenas de alumnos
+# Google Form para reseñas de alumnos
 
-URL editable en codigo:
+URL editable en código:
 
 `src/lib/contact.ts`
 
@@ -12,13 +12,13 @@ Preguntas sugeridas para armar el formulario:
 
 1. Nombre
 2. Instagram o contacto
-3. Que nivel tenias antes de tomar la mentoria? Desde cero / Basico / Intermedio
-4. Que te parecio la claridad de las clases?
-5. Que fue lo que mas te aporto de la mentoria?
-6. Como evaluarias la explicacion de estrategia, gestion de riesgo y psicologia?
-7. Recomendarias la mentoria? Si / No / Tal vez
-8. Escribe una resena breve sobre tu experiencia
-9. Autorizas que tu testimonio sea usado en la pagina web o redes sociales? Si / No
-10. Quieres que se publique tu nombre, iniciales o de forma anonima?
+3. ¿Qué nivel tenías antes de tomar la mentoría? Desde cero / Básico / Intermedio
+4. ¿Qué te pareció la claridad de las clases?
+5. ¿Qué fue lo que más te aportó de la mentoría?
+6. ¿Cómo evaluarías la explicación de estrategia, gestión de riesgo y psicología?
+7. ¿Recomendarías la mentoría? Sí / No / Tal vez
+8. Escribe una reseña breve sobre tu experiencia
+9. ¿Autorizas que tu testimonio sea usado en la página web o redes sociales? Sí / No
+10. ¿Quieres que se publique tu nombre, iniciales o de forma anónima?
 
 Nota: las respuestas deben revisarse manualmente antes de publicar cualquier testimonio en la landing.

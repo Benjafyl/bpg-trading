@@ -5,9 +5,11 @@ import {
   ArrowUpRight,
   Menu,
 } from "lucide-react";
+import { ApplicationCountdown } from "@/components/ApplicationCountdown";
 import { ContactForm } from "@/components/ContactForm";
 import { buildWhatsAppUrl, GOOGLE_REVIEW_FORM_URL } from "@/lib/contact";
 import {
+  applicationDeadline,
   audienceCards,
   certificates,
   heroStats,
@@ -17,7 +19,7 @@ import {
 } from "@/lib/content";
 
 const whatsappIntro =
-  "Hola, quiero recibir informacion sobre la Mentoria Percentil1.";
+  "Hola, quiero recibir información sobre la Mentoría Percentil1.";
 const profileImage = "/assets/benjamin-page-profile.png"; // Cambia esta ruta si reemplazas la foto oficial.
 const percentilLogo = "/assets/percentil1-logo.jpeg"; // Reemplaza este asset si cambia el logo oficial.
 
@@ -49,7 +51,7 @@ function Header() {
             Inicio
           </a>
           <a className="px-1 py-2 transition hover:text-[#78ECFF]" href="#mentoria">
-            Mentoria
+            Mentoría
           </a>
           <a className="px-1 py-2 transition hover:text-[#78ECFF]" href="#certificaciones">
             Certificaciones
@@ -68,7 +70,7 @@ function Header() {
           <div className="absolute right-0 mt-3 w-64 border border-[#36D9FF]/18 bg-[#0D0D0F] p-3 shadow-2xl shadow-black/60">
             {[
               ["Inicio", "#inicio"],
-              ["Mentoria", "#mentoria"],
+              ["Mentoría", "#mentoria"],
               ["Certificaciones", "#certificaciones"],
               ["Contacto", "#contacto"],
             ].map(([label, href]) => (
@@ -120,9 +122,9 @@ function Hero() {
 
       <div className="container-shell flex min-h-[calc(100vh-9rem)] items-center pb-24">
         <div className="reveal max-w-5xl">
-          <p className="eyebrow mb-6">Mentoria de trading / Benjamin Page</p>
+          <p className="eyebrow mb-6">Mentoría de trading / Benjamín Page</p>
           <h1 className="font-display text-[clamp(3.25rem,10.4vw,7.9rem)] leading-[1.02] text-[#F5F7FA] md:leading-[0.96]">
-            MENTORIA
+            MENTORÍA
             <span className="block text-[#A0A6B0]">
               PERCENTIL<span className="text-[#36D9FF] drop-shadow-[0_0_28px_rgba(54,217,255,0.46)]">1</span>
             </span>
@@ -133,11 +135,15 @@ function Hero() {
               cuentas de fondeo.
             </p>
             <p className="mt-6 max-w-xl text-base leading-8 text-[#A0A6B0] md:text-lg md:leading-9">
-              Un programa guiado por Benjamin Page para personas que quieren
-              aprender estructura, gestion de riesgo, psicologia y accion del
-              precio de forma practica.
+              Un programa guiado por Benjamín Page para personas que quieren
+              aprender estructura, gestión de riesgo, psicología y acción del
+              precio de forma práctica.
             </p>
           </div>
+          <ApplicationCountdown
+            deadlineIso={applicationDeadline.iso}
+            deadlineLabel={applicationDeadline.label}
+          />
           <div className="mt-9 flex flex-wrap gap-3">
             {heroStats.map((stat) => (
               <span
@@ -150,7 +156,7 @@ function Hero() {
           </div>
           <div className="mt-12 flex flex-col gap-4 sm:flex-row">
             <a href="#contacto" className="btn-primary">
-              Postular a la mentoria
+              Postular a la mentoría
               <ArrowUpRight className="h-4 w-4" />
             </a>
             <a href="#programa" className="btn-secondary">
@@ -194,9 +200,9 @@ function AudienceSection() {
     <section id="mentoria" className="section-pad border-y border-[#36D9FF]/10">
       <div className="container-shell">
         <SectionIntro
-          eyebrow="Para quien es"
+          eyebrow="Para quién es"
           title="Una ruta para aprender con estructura, no con ruido."
-          text="La mentoria esta pensada para construir criterio operativo desde fundamentos y avanzar hacia una preparacion responsable para evaluaciones de fondeo."
+          text="La mentoría está pensada para construir criterio operativo desde fundamentos y avanzar hacia una preparación responsable para evaluaciones de fondeo."
         />
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {audienceCards.map(({ title, text, icon: Icon }) => (
@@ -217,9 +223,9 @@ function LearningSection() {
     <section className="section-pad">
       <div className="container-shell">
         <SectionIntro
-          eyebrow="Que aprenderas"
+          eyebrow="Qué aprenderás"
           title="De los fundamentos a una operativa con reglas."
-          text="El contenido cubre las bases tecnicas y mentales necesarias para tomar decisiones con mayor claridad."
+          text="El contenido cubre las bases técnicas y mentales necesarias para tomar decisiones con mayor claridad."
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {learningTopics.map(({ title, text, icon: Icon }, index) => (
@@ -253,7 +259,7 @@ function ProgramSection() {
         <SectionIntro
           eyebrow="Programa"
           title="4 semanas para ordenar tu proceso."
-          text="Cada semana combina teoria, practica y criterios de revision para avanzar sin saltarse la base."
+          text="Cada semana combina teoría, práctica y criterios de revisión para avanzar sin saltarse la base."
         />
         <div className="mt-14 grid gap-5 lg:grid-cols-4">
           {programWeeks.map((week) => (
@@ -287,7 +293,7 @@ function AboutSection() {
             <div className="relative aspect-[4/5] overflow-hidden border border-[#36D9FF]/14 bg-[#0D0D0F] shadow-2xl shadow-black/40">
               <Image
                 src={profileImage}
-                alt="Benjamin Page"
+                alt="Benjamín Page"
                 fill
                 sizes="(min-width: 1024px) 420px, 100vw"
                 className="object-cover object-[50%_28%]"
@@ -299,7 +305,7 @@ function AboutSection() {
                   BPG Trading
                 </p>
                 <p className="mt-1 text-sm font-extrabold text-[#F5F7FA]">
-                  Benjamin Page
+                  Benjamín Page
                 </p>
               </div>
             </div>
@@ -307,14 +313,14 @@ function AboutSection() {
             <div className="premium-card relative aspect-[4/5] overflow-hidden p-8">
               <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(54,217,255,0.12),transparent_28%),radial-gradient(circle_at_78%_16%,rgba(92,96,104,0.22),transparent_28%)]" />
               <div className="relative z-10 flex h-full flex-col justify-between">
-                <p className="eyebrow">Benjamin Page</p>
+                <p className="eyebrow">Benjamín Page</p>
                 <div>
                   <p className="font-display text-[10rem] leading-[0.78] text-[#F5F7FA]">
                     BP
                   </p>
                   <p className="mt-5 max-w-xs text-sm leading-7 text-[#A0A6B0]">
                     Espacio preparado para insertar la foto oficial del mentor
-                    cuando este disponible en assets.
+                    cuando esté disponible en assets.
                   </p>
                 </div>
               </div>
@@ -322,14 +328,14 @@ function AboutSection() {
           )}
         </div>
         <div className="reveal">
-          <p className="eyebrow mb-5">Sobre Benjamin Page</p>
+          <p className="eyebrow mb-5">Sobre Benjamín Page</p>
           <h2 className="font-display text-[clamp(2.75rem,7vw,5rem)] leading-[1.06] text-[#F5F7FA] md:leading-[1]">
-            FORMACION CON BASE SOLIDA
+            FORMACIÓN CON BASE SÓLIDA
           </h2>
           <p className="mt-8 max-w-2xl text-lg leading-9 text-[#A0A6B0]">
-            Benjamin Page es trader y mentor enfocado en formar alumnos desde
-            una base solida, combinando gestion de riesgo, psicologia y lectura
-            tecnica del mercado. Despues de anos de estudio y practica, logro
+            Benjamín Page es trader y mentor enfocado en formar alumnos desde
+            una base sólida, combinando gestión de riesgo, psicología y lectura
+            técnica del mercado. Después de años de estudio y práctica, logró
             consolidar una operativa rentable y hoy busca entregar una ruta
             clara para quienes quieren aprender trading de forma estructurada.
           </p>
@@ -361,7 +367,7 @@ function CertificatesSection() {
           <SectionIntro
             eyebrow="Certificaciones y evidencia"
             title="Procesos completados y experiencia en cuentas de fondeo."
-            text="Evidencia visual de certificaciones, desafios y procesos completados por Benjamin Page."
+            text="Evidencia visual de certificaciones, desafíos y procesos completados por Benjamín Page."
           />
           <div className="premium-card reveal p-5 md:p-6">
             <div className="grid gap-4 sm:grid-cols-3">
@@ -381,7 +387,7 @@ function CertificatesSection() {
               ))}
             </div>
             <p className="mt-5 text-sm leading-7 text-[#A0A6B0]">
-              Las imagenes se muestran como respaldo editable de formacion,
+              Las imágenes se muestran como respaldo editable de formación,
               evaluaciones y experiencia en cuentas de fondeo.
             </p>
           </div>
@@ -446,15 +452,15 @@ function CommunitySection() {
       <div className="container-shell">
         <div className="premium-card reveal grid gap-8 p-7 md:grid-cols-[0.9fr_1.1fr] md:p-10">
           <div>
-            <p className="eyebrow mb-5">Resenas de alumnos</p>
+            <p className="eyebrow mb-5">Reseñas de alumnos</p>
             <h2 className="font-display text-[clamp(2.35rem,6vw,4.25rem)] leading-[1.08] text-[#F5F7FA] md:leading-[1.02]">
-              Tu experiencia tambien puede inspirar a otros traders.
+              Tu experiencia también puede inspirar a otros traders.
             </h2>
           </div>
           <div className="self-end">
             <p className="text-base leading-8 text-[#A0A6B0] md:text-lg md:leading-9">
-              Si ya participaste en la mentoria, comparte tu avance, tu proceso
-              y lo que mas valoraste del acompanamiento. Tu resena ayuda a que
+              Si ya participaste en la mentoría, comparte tu avance, tu proceso
+              y lo que más valoraste del acompañamiento. Tu reseña ayuda a que
               nuevos alumnos conozcan la experiencia Percentil1 desde dentro.
             </p>
             <a
@@ -463,7 +469,7 @@ function CommunitySection() {
               rel="noreferrer"
               className="btn-primary mt-8"
             >
-              Dejar mi resena
+              Dejar mi reseña
               <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
@@ -479,12 +485,12 @@ function FinalCta() {
       <BellCurve className="pointer-events-none absolute bottom-2 right-8 h-36 w-[360px] text-[#5C6068] opacity-40" />
       <div className="container-shell flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
         <div>
-          <p className="eyebrow">Postulacion</p>
+          <p className="eyebrow">Postulación</p>
           <h2 className="font-display mt-5 max-w-3xl text-[clamp(2.4rem,6.4vw,4.8rem)] leading-[1.08] text-[#F5F7FA] lg:leading-[1]">
-            QUIERES APRENDER TRADING CON ESTRUCTURA?
+            ¿QUIERES APRENDER TRADING CON ESTRUCTURA?
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[#A0A6B0]">
-            Postula a la mentoria y recibe informacion sobre cupos, fechas y
+            Postula a la mentoría y recibe información sobre cupos, fechas y
             modalidad.
           </p>
         </div>
@@ -511,14 +517,14 @@ function ContactSection() {
           eyebrow="Contacto"
           title={
             <>
-              Postula a la Mentoria Percentil
+              Postula a la Mentoría Percentil
               <span className="text-[#36D9FF] drop-shadow-[0_0_24px_rgba(54,217,255,0.45)]">
                 1
               </span>
               .
             </>
           }
-          text="Completa tus datos y se generara un mensaje prellenado para WhatsApp. Si el numero aun no esta configurado, el formulario usara correo como alternativa."
+          text="Completa tus datos y se generará un mensaje prellenado para WhatsApp. Si el número aún no está configurado, el formulario usará correo como alternativa."
         />
         <div className="premium-card reveal p-5 md:p-8 lg:p-9">
           <ContactForm />
@@ -545,10 +551,10 @@ function Footer() {
           </div>
         </div>
         <p className="max-w-3xl text-sm leading-7 text-[#A0A6B0]">
-          El trading implica riesgo y no garantiza resultados. La mentoria
-          tiene fines educativos y no constituye asesoria financiera
+          El trading implica riesgo y no garantiza resultados. La mentoría
+          tiene fines educativos y no constituye asesoría financiera
           personalizada. Los resultados dependen de la experiencia, disciplina y
-          gestion de riesgo de cada persona.
+          gestión de riesgo de cada persona.
         </p>
       </div>
     </footer>

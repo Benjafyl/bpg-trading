@@ -127,6 +127,12 @@ export const certificates = [
     format: "portrait",
   },
   {
+    title: "Santander Open Academy",
+    label: "Certificado de finalización",
+    image: "/assets/certificate-santander-open-academy-2026.jpeg",
+    format: "wide",
+  },
+  {
     title: "My Funded Futures Challenge Completion",
     label: "Challenge completion",
     image: "/assets/certificate-my-funded-futures-upright.jpeg",

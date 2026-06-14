@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
+import { getSiteUrl, siteConfig } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,16 +14,111 @@ const sora = Sora({
   weight: ["500", "600", "700", "800"],
 });
 
+const siteUrl = getSiteUrl();
+const iconVersion = "percentil1-20260614";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}#website`,
+      url: siteUrl.toString(),
+      name: siteConfig.name,
+      inLanguage: siteConfig.language,
+    },
+    {
+      "@type": "Course",
+      "@id": `${siteUrl}#course`,
+      name: "Mentoría Percentil1",
+      description: siteConfig.description,
+      inLanguage: siteConfig.language,
+      provider: {
+        "@type": "Person",
+        name: "Benjamín Page",
+        url: siteConfig.instagram,
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: "Mentoría Percentil1 | Benjamín Page Trading",
-  description:
-    "Mentoría de trading para aprender desde lo más básico hasta preparar una operativa enfocada en cuentas de fondeo, gestión de riesgo, psicología y acción del precio.",
+  metadataBase: siteUrl,
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [{ name: "Benjamín Page", url: siteConfig.instagram }],
+  creator: "Benjamín Page",
+  publisher: siteConfig.name,
+  keywords: [
+    "Mentoría Percentil1",
+    "Benjamín Page",
+    "BPG Trading",
+    "mentoría de trading",
+    "trading Chile",
+    "cuentas de fondeo",
+    "gestión de riesgo",
+    "psicología trading",
+    "acción del precio",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: `/favicon.ico?v=${iconVersion}`, sizes: "any" },
+      { url: `/icon.png?v=${iconVersion}`, type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: `/favicon.ico?v=${iconVersion}`,
+    apple: [
+      {
+        url: `/apple-icon.png?v=${iconVersion}`,
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "Mentoría Percentil1 | Benjamín Page Trading",
-    description:
-      "Programa guiado por Benjamín Page para aprender trading con estructura, riesgo, psicología y acción del precio.",
+    title: siteConfig.title,
+    description: siteConfig.shortDescription,
+    url: "/",
+    siteName: siteConfig.name,
     type: "website",
-    locale: "es_CL",
+    locale: siteConfig.locale,
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Mentoría Percentil1 de Benjamín Page",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.shortDescription,
+    images: ["/twitter-image.png"],
+  },
+  category: "education",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
 };
 
@@ -36,7 +132,15 @@ export default function RootLayout({
       lang="es"
       className={`${inter.variable} ${sora.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

@@ -418,14 +418,14 @@ function CertificatesSection() {
             text="Evidencia visual de certificaciones, desafíos y procesos completados por Benjamín Page."
           />
           <div className="premium-card reveal p-5 md:p-6">
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 min-[720px]:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
               {[
                 [String(certificates.length), "Evidencias"],
                 ["Fondeo", "Enfoque"],
                 ["Riesgo", "Base"],
               ].map(([value, label]) => (
-                <div key={label} className="border border-[#36D9FF]/12 bg-[#36D9FF]/[0.025] p-4">
-                  <p className="font-display text-4xl leading-none text-[#F5F7FA]">
+                <div key={label} className="min-w-0 border border-[#36D9FF]/12 bg-[#36D9FF]/[0.025] p-4">
+                  <p className="font-display text-[clamp(2rem,3.2vw,2.55rem)] leading-none text-[#F5F7FA]">
                     {value}
                   </p>
                   <p className="mt-2 text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-[#36D9FF]">

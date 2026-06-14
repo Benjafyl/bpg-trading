@@ -426,7 +426,7 @@ function CertificatesSection() {
                 ["Riesgo", "Base"],
               ].map(([value, label]) => (
                 <div key={label} className="min-w-0 overflow-hidden border border-[#36D9FF]/12 bg-[#36D9FF]/[0.025] p-4">
-                  <p className="font-display max-w-full text-[clamp(1.9rem,2.3vw,2.35rem)] leading-none text-[#F5F7FA]">
+                  <p className="font-display max-w-full whitespace-nowrap text-[clamp(1.45rem,1.85vw,1.95rem)] leading-none text-[#F5F7FA]">
                     {value}
                   </p>
                   <p className="mt-2 text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-[#36D9FF]">

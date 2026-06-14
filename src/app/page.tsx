@@ -7,6 +7,7 @@ import {
   Menu,
 } from "lucide-react";
 import { ApplicationCountdown } from "@/components/ApplicationCountdown";
+import { CertificateGallery } from "@/components/CertificateGallery";
 import { ContactForm } from "@/components/ContactForm";
 import { buildWhatsAppUrl, GOOGLE_REVIEW_FORM_URL } from "@/lib/contact";
 import {
@@ -418,14 +419,14 @@ function CertificatesSection() {
             text="Evidencia visual de certificaciones, desafíos y procesos completados por Benjamín Page."
           />
           <div className="premium-card reveal p-5 md:p-6">
-            <div className="grid gap-4 min-[720px]:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
               {[
                 [String(certificates.length), "Evidencias"],
                 ["Fondeo", "Enfoque"],
                 ["Riesgo", "Base"],
               ].map(([value, label]) => (
-                <div key={label} className="min-w-0 border border-[#36D9FF]/12 bg-[#36D9FF]/[0.025] p-4">
-                  <p className="font-display text-[clamp(2rem,3.2vw,2.55rem)] leading-none text-[#F5F7FA]">
+                <div key={label} className="min-w-0 overflow-hidden border border-[#36D9FF]/12 bg-[#36D9FF]/[0.025] p-4">
+                  <p className="font-display max-w-full text-[clamp(1.9rem,2.3vw,2.35rem)] leading-none text-[#F5F7FA]">
                     {value}
                   </p>
                   <p className="mt-2 text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-[#36D9FF]">
@@ -441,56 +442,9 @@ function CertificatesSection() {
           </div>
         </div>
 
-        <div className="mt-14 columns-1 gap-5 sm:columns-2 xl:columns-3">
-          {certificates.map((certificate) => (
-            <CertificateCard key={certificate.title} {...certificate} />
-          ))}
-        </div>
+        <CertificateGallery certificates={certificates} />
       </div>
     </section>
-  );
-}
-
-function CertificateCard({
-  title,
-  label,
-  image,
-  format,
-}: {
-  title: string;
-  label: string;
-  image: string;
-  format: string;
-}) {
-  const isWide = format === "wide";
-
-  return (
-    <article
-      className="premium-card reveal group mb-5 flex break-inside-avoid flex-col overflow-hidden transition duration-300 hover:-translate-y-2 hover:border-[#36D9FF]/45 hover:shadow-[0_26px_86px_rgba(54,217,255,0.12)]"
-    >
-      <div
-        className={`relative bg-[#08090a] ${
-          isWide ? "aspect-[1.52]" : "aspect-[0.78]"
-        }`}
-      >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(54,217,255,0.18),transparent_36%)] opacity-0 transition group-hover:opacity-100" />
-        <Image
-          src={image}
-          alt={title}
-          fill
-          sizes="(min-width: 1024px) 560px, (min-width: 640px) 50vw, 100vw"
-          className="object-contain p-4 transition duration-300 group-hover:scale-[1.03] md:p-5"
-        />
-      </div>
-      <div className="flex flex-1 flex-col p-6">
-        <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.12em] text-[#36D9FF]">
-          {label}
-        </p>
-        <h3 className="mt-4 text-lg font-extrabold leading-snug text-[#F5F7FA]">
-          {title}
-        </h3>
-      </div>
-    </article>
   );
 }
 

@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Percentil1",
+  url: "https://percentil1.cl",
   title: "Mentoría Percentil1 | Benjamín Page Trading",
   description:
     "Mentoría de trading para aprender desde lo más básico hasta preparar una operativa enfocada en cuentas de fondeo, gestión de riesgo, psicología y acción del precio.",
@@ -12,7 +13,7 @@ export const siteConfig = {
 
 export function getSiteUrl() {
   const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  const url = configuredUrl || "http://localhost:3000";
+  const url = configuredUrl || siteConfig.url;
 
   return new URL(url.endsWith("/") ? url : `${url}/`);
 }

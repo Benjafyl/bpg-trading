@@ -15,7 +15,6 @@ const sora = Sora({
 });
 
 const siteUrl = getSiteUrl();
-const iconVersion = "percentil1-20260614";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -69,13 +68,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: `/favicon.ico?v=${iconVersion}`, sizes: "any" },
-      { url: `/icon.png?v=${iconVersion}`, type: "image/png", sizes: "512x512" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon-192x192.png", type: "image/png", sizes: "192x192" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
     ],
-    shortcut: `/favicon.ico?v=${iconVersion}`,
+    shortcut: "/favicon-48x48.png",
     apple: [
       {
-        url: `/apple-icon.png?v=${iconVersion}`,
+        url: "/apple-icon.png",
         type: "image/png",
         sizes: "180x180",
       },

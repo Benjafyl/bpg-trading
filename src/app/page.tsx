@@ -539,25 +539,32 @@ function ContactSection() {
 function Footer() {
   return (
     <footer className="border-t border-[#36D9FF]/10 py-10">
-      <div className="container-shell grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
-        <div>
-          <BrandLogo />
-          <div className="mt-5 flex gap-4 text-sm font-bold text-[#A0A6B0]">
-            <a className="inline-flex items-center gap-2 hover:text-[#78ECFF]" href={instagramUrl} target="_blank" rel="noreferrer">
-              <InstagramIcon className="h-4 w-4" />
-              Instagram
-            </a>
-            <a className="hover:text-[#78ECFF]" href="#contacto">
-              Contacto
-            </a>
+      <div className="container-shell">
+        <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <BrandLogo />
+            <div className="mt-5 flex gap-4 text-sm font-bold text-[#A0A6B0]">
+              <a className="inline-flex items-center gap-2 hover:text-[#78ECFF]" href={instagramUrl} target="_blank" rel="noreferrer">
+                <InstagramIcon className="h-4 w-4" />
+                Instagram
+              </a>
+              <a className="hover:text-[#78ECFF]" href="#contacto">
+                Contacto
+              </a>
+            </div>
           </div>
+          <p className="max-w-3xl text-sm leading-7 text-[#A0A6B0]">
+            El trading implica riesgo y no garantiza resultados. La mentoría
+            tiene fines educativos y no constituye asesoría financiera
+            personalizada. Los resultados dependen de la experiencia, disciplina y
+            gestión de riesgo de cada persona.
+          </p>
         </div>
-        <p className="max-w-3xl text-sm leading-7 text-[#A0A6B0]">
-          El trading implica riesgo y no garantiza resultados. La mentoría
-          tiene fines educativos y no constituye asesoría financiera
-          personalizada. Los resultados dependen de la experiencia, disciplina y
-          gestión de riesgo de cada persona.
-        </p>
+        <div className="mt-9 border-t border-[#36D9FF]/10 pt-8 text-center">
+          <p className="text-sm font-semibold leading-6 text-[#A0A6B0]">
+            Desarrollado por Benjamin Yáñez Lasalvia.
+          </p>
+        </div>
       </div>
     </footer>
   );

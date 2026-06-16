@@ -163,3 +163,20 @@ export const certificates = [
     format: "wide",
   },
 ];
+
+export const studentReviews = [
+  {
+    name: "Patricio Godoy",
+    generation: "1era generación Percentil1",
+    rating: 5,
+    quote:
+      "El contenido de la mentoría entrega las herramientas necesarias para salir a operar y prepararse para buscar una cuenta de fondeo. Además, destaco el profesionalismo, la disposición y la cercanía de Benjamín. Sin duda, ha sido una experiencia de gran valor para mi desarrollo.",
+  },
+  {
+    name: "Felipe Madariaga",
+    generation: "1era generación Percentil1",
+    rating: 5,
+    quote:
+      "Las clases son muy claras, prácticas y bien explicadas. Muy recomendado para cualquiera que quiera empezar. Excelente experiencia.",
+  },
+];

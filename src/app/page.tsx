@@ -9,6 +9,7 @@ import {
 import { ApplicationCountdown } from "@/components/ApplicationCountdown";
 import { CertificateGallery } from "@/components/CertificateGallery";
 import { ContactForm } from "@/components/ContactForm";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { buildWhatsAppUrl, GOOGLE_REVIEW_FORM_URL } from "@/lib/contact";
 import {
   applicationDeadline,
@@ -18,6 +19,7 @@ import {
   instagramUrl,
   learningTopics,
   programWeeks,
+  studentReviews,
 } from "@/lib/content";
 
 const whatsappIntro =
@@ -452,30 +454,10 @@ function CommunitySection() {
   return (
     <section id="resenas" className="section-pad scroll-mt-28">
       <div className="container-shell">
-        <div className="premium-card reveal grid gap-8 p-7 md:grid-cols-[0.9fr_1.1fr] md:p-10">
-          <div>
-            <p className="eyebrow mb-5">Reseñas de alumnos</p>
-            <h2 className="font-display text-[clamp(2.35rem,6vw,4.25rem)] leading-[1.08] text-[#F5F7FA] md:leading-[1.02]">
-              Tu experiencia también puede inspirar a otros traders.
-            </h2>
-          </div>
-          <div className="self-end">
-            <p className="text-base leading-8 text-[#A0A6B0] md:text-lg md:leading-9">
-              Si ya participaste en la mentoría, comparte tu avance, tu proceso
-              y lo que más valoraste del acompañamiento. Tu reseña ayuda a que
-              nuevos alumnos conozcan la experiencia Percentil1 desde dentro.
-            </p>
-            <a
-              href={GOOGLE_REVIEW_FORM_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary mt-8"
-            >
-              Dejar mi reseña
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
+        <TestimonialsCarousel
+          reviews={studentReviews}
+          reviewFormUrl={GOOGLE_REVIEW_FORM_URL}
+        />
       </div>
     </section>
   );

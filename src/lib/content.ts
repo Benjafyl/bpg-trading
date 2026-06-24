@@ -179,4 +179,11 @@ export const studentReviews = [
     quote:
       "Las clases son muy claras, prácticas y bien explicadas. Muy recomendado para cualquiera que quiera empezar. Excelente experiencia.",
   },
+  {
+    name: "Felipe Sanchez",
+    generation: "1era generación Percentil1",
+    rating: 5,
+    quote:
+      "Excelente experiencia. Contenido práctico desde el comienzo junto a la experiencia de Benjamín hacen muy interesantes los análisis. Además, el profesor siempre presente para resolver dudas y apoyar el aprendizaje de todos. Totalmente recomendable para quienes buscan adentrarse en este mundo del trading.",
+  },
 ];

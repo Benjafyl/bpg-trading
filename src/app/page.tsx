@@ -6,13 +6,13 @@ import {
   ChevronDown,
   Menu,
 } from "lucide-react";
-import { ApplicationCountdown } from "@/components/ApplicationCountdown";
+import { ApplicationOpeningBanner } from "@/components/ApplicationOpeningBanner";
 import { CertificateGallery } from "@/components/CertificateGallery";
 import { ContactForm } from "@/components/ContactForm";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { buildWhatsAppUrl, GOOGLE_REVIEW_FORM_URL } from "@/lib/contact";
 import {
-  applicationDeadline,
+  applicationOpening,
   audienceCards,
   certificates,
   heroStats,
@@ -29,7 +29,7 @@ const percentilLogo = "/assets/percentil1-logo.jpeg"; // Reemplaza este asset si
 
 const homeNavItems = [
   ["Inicio", "#inicio"],
-  ["Segunda generación", "#segunda-generacion"],
+  ["Tercera generación", "#tercera-generacion"],
   ["Postulación", "#contacto"],
 ];
 
@@ -191,9 +191,9 @@ function Hero() {
               precio de forma práctica.
             </p>
           </div>
-          <ApplicationCountdown
-            deadlineIso={applicationDeadline.iso}
-            deadlineLabel={applicationDeadline.label}
+          <ApplicationOpeningBanner
+            generation={applicationOpening.generation}
+            openingDateLabel={applicationOpening.label}
           />
           <div className="mt-9 flex flex-wrap gap-3">
             {heroStats.map((stat) => (

@@ -16,7 +16,7 @@ export const instagramUrl = "https://www.instagram.com/bpgtrading/?hl=es-la";
 
 export const applicationOpening = {
   generation: "Tercera generación",
-  label: "1 de agosto",
+  label: "20 de julio de 2026",
 };
 
 export const heroStats = [

@@ -26,6 +26,8 @@ const whatsappIntro =
   "Hola, quiero recibir información sobre la Mentoría Percentil1.";
 const profileImage = "/assets/benjamin-page-profile.png"; // Cambia esta ruta si reemplazas la foto oficial.
 const percentilLogo = "/assets/percentil1-logo.jpeg"; // Reemplaza este asset si cambia el logo oficial.
+const dreamWebLogo = "/assets/dream-web-chile-logo.png";
+const dreamWebInstagram = "https://www.instagram.com/dreamwebchile/";
 
 const homeNavItems = [
   ["Inicio", "#inicio"],
@@ -542,10 +544,28 @@ function Footer() {
             gestión de riesgo de cada persona.
           </p>
         </div>
-        <div className="mt-9 border-t border-[#36D9FF]/10 pt-8 text-center">
-          <p className="text-sm font-semibold leading-6 text-[#A0A6B0]">
-            Desarrollado por Benjamin Yáñez Lasalvia.
-          </p>
+        <div className="mt-9 flex justify-center border-t border-[#36D9FF]/10 pt-8">
+          <a
+            href={dreamWebInstagram}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-3 border border-[#36D9FF]/12 bg-[#36D9FF]/[0.03] px-4 py-2.5 text-sm font-semibold leading-6 text-[#A0A6B0] transition hover:border-[#36D9FF]/32 hover:text-[#F5F7FA]"
+            aria-label="Desarrollado por Dream Web Chile"
+          >
+            <span className="relative h-7 w-7 overflow-hidden rounded-sm bg-black/60">
+              <Image
+                src={dreamWebLogo}
+                alt=""
+                fill
+                sizes="28px"
+                className="object-contain"
+              />
+            </span>
+            <span>
+              Desarrollado por{" "}
+              <span className="text-[#F5F7FA]">Dream Web Chile</span>
+            </span>
+          </a>
         </div>
       </div>
     </footer>

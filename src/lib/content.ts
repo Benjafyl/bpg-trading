@@ -16,7 +16,8 @@ export const instagramUrl = "https://www.instagram.com/bpgtrading/?hl=es-la";
 
 export const applicationOpening = {
   generation: "Tercera generación",
-  label: "20 de julio de 2026",
+  label: "domingo 2 de agosto",
+  iso: "2026-08-02T23:59:59-04:00",
 };
 
 export const heroStats = [
@@ -136,6 +137,12 @@ export const certificates = [
     title: "My Funded Futures Challenge Completion",
     label: "Challenge completion",
     image: "/assets/certificate-my-funded-futures-upright.jpeg",
+    format: "wide",
+  },
+  {
+    title: "FundedNext Futures Flex Challenge 50K",
+    label: "Rising Trader",
+    image: "/assets/certificate-fundednext-futures-rising-trader.jpeg",
     format: "wide",
   },
   {

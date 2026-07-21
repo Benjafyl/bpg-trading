@@ -195,7 +195,8 @@ function Hero() {
           </div>
           <ApplicationOpeningBanner
             generation={applicationOpening.generation}
-            openingDateLabel={applicationOpening.label}
+            deadlineIso={applicationOpening.iso}
+            deadlineLabel={applicationOpening.label}
           />
           <div className="mt-9 flex flex-wrap gap-3">
             {heroStats.map((stat) => (

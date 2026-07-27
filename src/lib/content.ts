@@ -195,7 +195,7 @@ export const studentReviews = [
   },
   {
     name: "Jesus Eduardo",
-    generation: "1era generación Percentil1",
+    generation: "2da generación Percentil1",
     rating: 5,
     quote:
       "Bastante claro y eficiente la manera de explicar de Benjamin, identificar los tipos de liquidez, patron ideales para operar.",
@@ -209,7 +209,7 @@ export const studentReviews = [
   },
   {
     name: "Renzo",
-    generation: "1era generación Percentil1",
+    generation: "2da generación Percentil1",
     rating: 5,
     quote:
       "Experiencia enriquecedora y positiva, aprendí a entender mejor el mercado, la importancia del orden y de la data.",

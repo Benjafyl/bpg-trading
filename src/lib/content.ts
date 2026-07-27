@@ -193,4 +193,25 @@ export const studentReviews = [
     quote:
       "Excelente experiencia. Contenido práctico desde el comienzo junto a la experiencia de Benjamín hacen muy interesantes los análisis. Además, el profesor siempre presente para resolver dudas y apoyar el aprendizaje de todos. Totalmente recomendable para quienes buscan adentrarse en este mundo del trading.",
   },
+  {
+    name: "Jesus Eduardo",
+    generation: "1era generación Percentil1",
+    rating: 5,
+    quote:
+      "Bastante claro y eficiente la manera de explicar de Benjamin, identificar los tipos de liquidez, patron ideales para operar.",
+  },
+  {
+    name: "Claudio",
+    generation: "1era generación Percentil1",
+    rating: 5,
+    quote:
+      "Curso ordenado, clases puntuales, y el contenido bien explicado. Totalmente recomendado.",
+  },
+  {
+    name: "Renzo",
+    generation: "1era generación Percentil1",
+    rating: 5,
+    quote:
+      "Experiencia enriquecedora y positiva, aprendí a entender mejor el mercado, la importancia del orden y de la data.",
+  },
 ];

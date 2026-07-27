@@ -56,11 +56,11 @@ export function TestimonialsCarousel({
         <div className="max-w-3xl">
           <p className="eyebrow mb-5">Reseñas de alumnos</p>
           <h2 className="font-display text-[clamp(2.35rem,6vw,4.6rem)] leading-[1.08] text-[#F5F7FA] md:leading-[1.02]">
-            Lo que dice la primera generación.
+            Lo que dicen nuestros alumnos.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[#A0A6B0] md:text-lg md:leading-9">
             Reseñas autorizadas por alumnos que participaron en la Mentoría
-            Percentil1 y compartieron su experiencia al finalizar el proceso.
+            Percentil1 y compartieron su experiencia durante su proceso.
           </p>
         </div>
 

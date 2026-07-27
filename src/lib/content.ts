@@ -202,7 +202,7 @@ export const studentReviews = [
   },
   {
     name: "Claudio",
-    generation: "1era generación Percentil1",
+    generation: "2da generación Percentil1",
     rating: 5,
     quote:
       "Curso ordenado, clases puntuales, y el contenido bien explicado. Totalmente recomendado.",

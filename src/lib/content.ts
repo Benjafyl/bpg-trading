@@ -16,8 +16,8 @@ export const instagramUrl = "https://www.instagram.com/bpgtrading/?hl=es-la";
 
 export const applicationOpening = {
   generation: "Tercera generación",
-  label: "domingo 2 de agosto",
-  iso: "2026-08-02T23:59:59-04:00",
+  status: "Inscripciones cerradas hasta nuevo aviso",
+  text: "Estamos preparando la próxima apertura de cupos. Puedes dejar tus datos para recibir información cuando se anuncie una nueva fecha.",
 };
 
 export const heroStats = [

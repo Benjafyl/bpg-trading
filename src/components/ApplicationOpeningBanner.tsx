@@ -28,7 +28,7 @@ export function ApplicationOpeningBanner({
         href="#contacto"
         className="btn-primary min-w-44 !min-h-12 !px-5 !py-3 text-[0.72rem]"
       >
-        Lista de espera
+        Postular
         <ArrowUpRight className="h-4 w-4" />
       </a>
     </div>

@@ -31,7 +31,7 @@ const dreamWebInstagram = "https://www.instagram.com/dreamwebchile/";
 
 const homeNavItems = [
   ["Inicio", "#inicio"],
-  ["Tercera generación", "#tercera-generacion"],
+  ["4ta generación", "#tercera-generacion"],
   ["Postulación", "#contacto"],
 ];
 
